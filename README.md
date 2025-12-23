@@ -14,7 +14,7 @@ A magical Harry Potter-themed portfolio website built with React, Vite, and Tail
 
 ## 🚀 Live Demo
 
-Visit: [Your Vercel URL will be here]
+Visit: (https://portfolioshridipa.vercel.app/)
 
 ## 🛠️ Tech Stack
 
@@ -45,15 +45,11 @@ npm run dev
 
 This project is deployed on Vercel. See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for detailed instructions.
 
-## 📝 License
-
-MIT License - feel free to use this project for your own portfolio!
-
 ## 👤 Author
 
 **Shridipa Dhar**
 - GitHub: [@Shridipa](https://github.com/Shridipa)
-- Portfolio: [Your Vercel URL]
+- Portfolio: (https://portfolioshridipa.vercel.app/)
 
 ---
 
