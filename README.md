@@ -16,10 +16,15 @@ A Harry Potter–inspired portfolio website built with React, Vite, and Tailwind
 🛠️ Tech Stack
 
 • 	Framework: React 19
+
 • 	Build Tool: Vite 7
+
 • 	Styling: Tailwind CSS 4
+
 • 	Animations: Framer Motion
+
 • 	3D Graphics: Three.js, React Three Fiber
+
 • 	Icons: Lucide React
 
 📦 Installation
