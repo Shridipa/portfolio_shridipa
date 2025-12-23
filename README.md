@@ -14,6 +14,7 @@ A Harry Potter–inspired portfolio website built with React, Vite, and Tailwind
 🔗 View Portfolio (https://portfolioshridipa.vercel.app/)
 
 🛠️ Tech Stack
+
 • 	Framework: React 19
 • 	Build Tool: Vite 7
 • 	Styling: Tailwind CSS 4
