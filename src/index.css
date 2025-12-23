@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,400&family=Inter:wght@300;400;700&display=swap');
+
+@theme {
+  --color-gryffindor-red: #7f1d1d;
+  --color-gryffindor-gold: #fbbf24;
+  --color-parchment-light: #fef3c7;
+  --color-parchment-deep: #f5e6d3;
+  --color-ink: #1a1a1a;
+
+  --font-display: 'Cinzel', serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  cursor: none;
+}
+
+body {
+  @apply bg-[#0a0a0a] text-parchment-light antialiased font-serif selection:bg-gryffindor-gold selection:text-ink;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Cinematic Grain/Noise */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Premium Glass-Parchment UI */
+.glass-parchment {
+  @apply bg-black/40 backdrop-blur-2xl border border-white/5 relative overflow-hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(251, 191, 36, 0.05);
+}
+
+.glass-parchment::after {
+  content: "";
+  @apply absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none;
+}
+
+/* Glowing Elements */
+.glow-text-gold {
+  @apply text-gryffindor-gold;
+  text-shadow: 0 0 5px rgba(251, 191, 36, 0.4);
+}
+
+.glow-border-gold {
+  @apply border-gryffindor-gold/30;
+  box-shadow: 0 0 30px rgba(251, 191, 36, 0.1);
+}
+
+/* Typography Overrides */
+h1,
+h2,
+h3,
+.nav-item {
+  @apply font-display;
+}
+
+/* Ink-Bleed Animation Utility */
+.ink-reveal {
+  color: #fbbf24;
+  opacity: 0;
+  animation: inkReveal 0.6s cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+
+@keyframes inkReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Magic Particles Background */
+.magic-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(127, 29, 29, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(251, 191, 36, 0.05) 0%, transparent 40%);
+}
+
+canvas {
+  touch-action: none;
+}
+
+/* Scrollbar Refinement */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-gryffindor-gold/30 transition-colors;
+}
+
+/* Cursor Reset */
+* {
+  cursor: none !important;
+}
