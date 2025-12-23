@@ -31,7 +31,7 @@ const SkillsGrid = () => {
         {
             title: "Achievements",
             icon: <Award className="text-gryffindor-gold" />,
-            skills: ["Black Belt Karate", "CodeSprint 2.0", "Winner"]
+            skills: ["Black Belt Karate", "CodeSprint 2.0", "Intraschool Creative Writing Winner"]
         }
     ];
 
