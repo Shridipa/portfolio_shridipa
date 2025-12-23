@@ -41,10 +41,6 @@ npm install
 npm run dev
 ```
 
-## 🌐 Deployment
-
-This project is deployed on Vercel. See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for detailed instructions.
-
 ## 👤 Author
 
 **Shridipa Dhar**
