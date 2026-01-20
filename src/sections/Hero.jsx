@@ -4,7 +4,6 @@ import GoldenSnitch from "../components/GoldenSnitch";
 const Hero = () => {
     return (
         <section id="home" className="relative min-h-screen flex items-center px-10 pt-20 overflow-hidden">
-            {/* Wider flight area for the Snitch */}
             <div className="absolute inset-0 z-0 pointer-events-none">
                 <GoldenSnitch />
             </div>

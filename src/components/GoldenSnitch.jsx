@@ -22,23 +22,19 @@ const GoldenSnitch = () => {
             style={{ width: "80px", height: "80px" }}
         >
             <div className="relative w-full h-full flex items-center justify-center">
-                {/* Core Sphere */}
                 <motion.div
                     className="w-8 h-8 rounded-full bg-gradient-to-br from-gryffindor-gold via-yellow-300 to-amber-600 shadow-[0_0_30px_rgba(251,191,36,0.8)] z-30"
                     animate={{ scale: [1, 1.05, 1] }}
                     transition={{ duration: 0.5, repeat: Infinity }}
                 />
 
-                {/* Wing Assembly - Left */}
                 <div className="absolute right-1/2 mr-[-4px] flex items-center z-20">
-                    {/* Main Wing */}
                     <motion.div
                         className="w-16 h-6 bg-gradient-to-l from-white/40 to-transparent backdrop-blur-sm rounded-full origin-right"
                         style={{ clipPath: "polygon(0% 50%, 100% 0%, 100% 100%)" }}
                         animate={{ rotateY: [0, 85, 0], rotateZ: [-20, 20, -20] }}
                         transition={wingTransition}
                     />
-                    {/* Feather Layer 1 */}
                     <motion.div
                         className="absolute right-0 w-12 h-4 bg-white/20 blur-[1px] rounded-full origin-right"
                         style={{ clipPath: "polygon(0% 50%, 100% 0%, 100% 100%)" }}
@@ -47,16 +43,13 @@ const GoldenSnitch = () => {
                     />
                 </div>
 
-                {/* Wing Assembly - Right */}
                 <div className="absolute left-1/2 ml-[-4px] flex items-center z-20">
-                    {/* Main Wing */}
                     <motion.div
                         className="w-16 h-6 bg-gradient-to-r from-white/40 to-transparent backdrop-blur-sm rounded-full origin-left"
                         style={{ clipPath: "polygon(100% 50%, 0% 0%, 0% 100%)" }}
                         animate={{ rotateY: [0, -85, 0], rotateZ: [20, -20, 20] }}
                         transition={wingTransition}
                     />
-                    {/* Feather Layer 1 */}
                     <motion.div
                         className="absolute left-0 w-12 h-4 bg-white/20 blur-[1px] rounded-full origin-left"
                         style={{ clipPath: "polygon(100% 50%, 0% 0%, 0% 100%)" }}
@@ -65,7 +58,6 @@ const GoldenSnitch = () => {
                     />
                 </div>
 
-                {/* Magic Trail Particles */}
                 <div className="absolute inset-0 -z-10">
                     {[1, 2, 3].map((id) => (
                         <motion.div
@@ -87,7 +79,6 @@ const GoldenSnitch = () => {
                 </div>
             </div>
 
-            {/* Ambient Glow */}
             <div className="absolute inset-0 bg-gryffindor-gold/10 blur-[40px] rounded-full scale-[2.5] animate-pulse -z-20" />
         </motion.div>
     );

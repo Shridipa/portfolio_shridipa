@@ -25,7 +25,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Cinematic Grain/Noise */
 body::before {
   content: "";
   position: fixed;
@@ -39,7 +38,6 @@ body::before {
   z-index: 9999;
 }
 
-/* Premium Glass-Parchment UI */
 .glass-parchment {
   @apply bg-black/40 backdrop-blur-2xl border border-white/5 relative overflow-hidden;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(251, 191, 36, 0.05);
@@ -50,7 +48,6 @@ body::before {
   @apply absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none;
 }
 
-/* Glowing Elements */
 .glow-text-gold {
   @apply text-gryffindor-gold;
   text-shadow: 0 0 5px rgba(251, 191, 36, 0.4);
@@ -61,7 +58,6 @@ body::before {
   box-shadow: 0 0 30px rgba(251, 191, 36, 0.1);
 }
 
-/* Typography Overrides */
 h1,
 h2,
 h3,
@@ -69,7 +65,6 @@ h3,
   @apply font-display;
 }
 
-/* Ink-Bleed Animation Utility */
 .ink-reveal {
   color: #fbbf24;
   opacity: 0;
@@ -88,7 +83,6 @@ h3,
   }
 }
 
-/* Magic Particles Background */
 .magic-background {
   position: fixed;
   inset: 0;
@@ -102,7 +96,6 @@ canvas {
   touch-action: none;
 }
 
-/* Scrollbar Refinement */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -113,8 +106,4 @@ canvas {
 
 ::-webkit-scrollbar-thumb {
   @apply bg-white/10 rounded-full hover:bg-gryffindor-gold/30 transition-colors;
-}
-
-/* Cursor Reset */
-* {
 }

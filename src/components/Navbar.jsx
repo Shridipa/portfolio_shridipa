@@ -30,7 +30,6 @@ const Navbar = () => {
                     </span>
                 </motion.div>
 
-                {/* Desktop Menu */}
                 <div className="hidden md:flex gap-12">
                     {navLinks.map((link) => (
                         <a
@@ -44,7 +43,6 @@ const Navbar = () => {
                     ))}
                 </div>
 
-                {/* Mobile menu button */}
                 <div className="md:hidden">
                     <button onClick={() => setIsOpen(!isOpen)} className="p-3 text-gryffindor-gold">
                         {isOpen ? <X size={32} /> : <Menu size={32} />}
@@ -52,7 +50,6 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Mobile Menu */}
             {isOpen && (
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}

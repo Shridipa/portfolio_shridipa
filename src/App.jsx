@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import CanvasContainer from "./components/CanvasContainer";
 import Hero3D from "./components/Hero3D";
 import HUDOverlay from "./components/HUDOverlay";
-import CustomCursor from "./components/CustomCursor";
 import Hero from "./sections/Hero";
 import Projects from "./sections/Projects";
 import SkillsGrid from "./sections/SkillsGrid";
@@ -23,7 +22,6 @@ function App() {
       <ResumeViewer isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
       <AmbientMusic />
 
-      {/* 3D Arc Reactor Background - Now themed as Golden Snitch */}
       <CanvasContainer>
         <Hero3D />
       </CanvasContainer>
@@ -32,10 +30,7 @@ function App() {
       <SkillsGrid />
       <Projects />
 
-      {/* Footer / Contact */}
       <section id="contact" className="py-48 flex flex-col items-center justify-center px-10 bg-black relative border-t border-white/5">
-
-
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
