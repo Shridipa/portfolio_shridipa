@@ -3,44 +3,46 @@ import ProjectCard from "../components/ProjectCard";
 
 const projects = [
     {
-        title: "MoodMorph",
-        description: "Emotion-aware product recommendation engine powered by mood detection, MBTI analysis, and machine learning. Delivers personalized suggestions through an interactive interface.",
-        tags: ["AI/ML", "PYTHON", "EMOTION AI"],
-        github: "https://github.com/Shridipa/MoodMorph",
-        link: "https://github.com/Shridipa/MoodMorph",
+        title: "Portfolio Shridipa",
+        description: "A Harry Potter–themed portfolio website built with React, Vite, and Tailwind CSS. Features magical UI elements and a Gryffindor-inspired design.",
+        tags: ["REACT", "VITE", "TAILWIND"],
+        github: "https://github.com/Shridipa/portfolio_shridipa",
         isPinned: true
     },
     {
-        title: "Smart Attendance",
-        description: "UiPath-powered attendance automation that detects absentees and generates weekly reports. Reduces manual process from 30 minutes to just 2 minutes.",
-        tags: ["RPA", "UIPATH", "AUTOMATION"],
-        github: "https://github.com/Shridipa/Smart_Automated_Attendance_Notification_System",
-        link: "https://github.com/Shridipa/Smart_Automated_Attendance_Notification_System",
+        title: "LecGenAI",
+        description: "Intelligent lecture assistant for transforming recorded lectures into comprehensive study materials using generative AI.",
+        tags: ["GEN AI", "NLP", "PYTHON"],
+        github: "https://github.com/Shridipa/LecGenAI",
+        isPinned: true
+    },
+    {
+        title: "MoodMorph",
+        description: "Emotion-aware product recommendation engine powered by mood detection and machine learning. Delivers personalized suggestions.",
+        tags: ["AI/ML", "PYTHON", "EMOTION AI"],
+        github: "https://github.com/Shridipa/MoodMorph",
         isPinned: true
     },
     {
         title: "PDF Genie",
-        description: "Flask-based multilingual document automation engine. Handles complex NLP tasks and deep translations across 10+ languages with precision.",
+        description: "Flask-based multilingual document automation engine. Handles complex NLP tasks and real-time text extraction from PDFs.",
         tags: ["PYTHON", "FLASK", "NLP"],
         github: "https://github.com/Shridipa/PDF-Genie",
-        link: "https://github.com/Shridipa/PDF-Genie",
         isPinned: true
     },
     {
-        title: "IMDB Rating Bot",
-        description: "RPA bot that extracts movie ratings and metadata from IMDB. Automates data collection for streaming intelligence and content analysis.",
-        tags: ["RPA", "UIPATH", "WEB SCRAPING"],
-        github: "https://github.com/Shridipa/IMDB_Rating_Bot",
-        link: "https://github.com/Shridipa/IMDB_Rating_Bot",
-        isPinned: false
+        title: "Smart Attendance",
+        description: "UiPath-powered attendance automation that detects absentees and generates weekly reports. Significantly reduces manual processing time.",
+        tags: ["RPA", "UIPATH", "AUTOMATION"],
+        github: "https://github.com/Shridipa/Smart_Automated_Attendance_Notification_System",
+        isPinned: true
     },
     {
         title: "Amazon Scraper",
-        description: "Automated RPA bot for extracting product data, prices, and ratings from Amazon. Delivers real-time market intelligence.",
-        tags: ["RPA", "DATA EXTRACTION", "E-COMMERCE"],
+        description: "Automated RPA bot for extracting product data, prices, and ratings from Amazon for market intelligence.",
+        tags: ["RPA", "DATA EXTRACTION", "BOT"],
         github: "https://github.com/Shridipa/Amazon_Product_Scrapper_Bot",
-        link: "https://github.com/Shridipa/Amazon_Product_Scrapper_Bot",
-        isPinned: false
+        isPinned: true
     },
 ];
 

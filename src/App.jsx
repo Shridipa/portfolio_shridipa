@@ -17,7 +17,6 @@ function App() {
 
   return (
     <main className="relative bg-neutral-950 min-h-screen text-neutral-100 overflow-hidden">
-      <CustomCursor />
       <Navbar />
       <HUDOverlay />
       <WandPointer />

@@ -17,7 +17,6 @@
 :root {
   color-scheme: dark;
   scroll-behavior: smooth;
-  cursor: none;
 }
 
 body {
@@ -118,5 +117,4 @@ canvas {
 
 /* Cursor Reset */
 * {
-  cursor: none !important;
 }
