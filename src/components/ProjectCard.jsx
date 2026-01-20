@@ -1,58 +1,72 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github, ArrowRight, Shield } from "lucide-react";
+import { Github, ArrowUpRight, Folder, Sparkles } from "lucide-react";
 
-const ProjectCard = ({ title, description, tags, link, github }) => {
+const ProjectCard = ({ title, description, tags, github, index }) => {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 50 }}
+        <motion.a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="glass-parchment group transition-all duration-1000 overflow-hidden border-white/5 hover:border-gryffindor-gold/40 rounded-sm flex flex-col"
+            transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="group relative flex flex-col h-full glass-parchment rounded-sm overflow-hidden transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] border-white/5 hover:border-gryffindor-gold/30"
         >
-            <div className="h-80 bg-gradient-to-br from-gryffindor-red/20 via-black to-black p-16 flex flex-col justify-between relative overflow-hidden">
-                {/* Cinematic Backdrop */}
-                <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-1000 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]" />
-                <div className="absolute top-0 right-0 w-64 h-64 bg-gryffindor-gold/5 blur-[100px] rounded-full group-hover:scale-150 transition-transform duration-1000" />
-
-                <div className="flex justify-between items-start z-10">
-                    <div className="p-4 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-sm">
-                        <Shield className="text-gryffindor-gold" size={28} />
+            {/* Project Header / Image Placeholder */}
+            <div className="relative h-56 w-full overflow-hidden bg-gradient-to-br from-gryffindor-red/20 via-neutral-900 to-black">
+                <div className="absolute inset-0 opacity-40 mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]" />
+                
+                {/* Animated Particles/Orbs */}
+                <div className="absolute top-4 left-4 flex gap-2">
+                    <div className="p-3 bg-black/40 backdrop-blur-md border border-white/10 rounded-sm">
+                        <Folder size={18} className="text-gryffindor-gold" />
                     </div>
-                    <div className="flex gap-8">
-                        {github && <a href={github} className="text-white/40 hover:text-gryffindor-gold hover:scale-125 transition-all duration-500"><Github size={28} /></a>}
-                        {link && <a href={link} className="text-white/40 hover:text-gryffindor-gold hover:scale-125 transition-all duration-500"><ExternalLink size={28} /></a>}
+                    <div className="p-3 bg-black/40 backdrop-blur-md border border-white/10 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <Github size={18} className="text-gryffindor-gold" />
                     </div>
                 </div>
+                
+                <div className="absolute top-4 right-4 flex items-center gap-2 px-3 py-1 bg-gryffindor-red/20 backdrop-blur-md border border-gryffindor-red/30 rounded-full">
+                    <Sparkles size={12} className="text-gryffindor-gold animate-pulse" />
+                    <span className="text-[10px] text-parchment-light/80 font-display font-black uppercase tracking-tighter">Certified</span>
+                </div>
 
-                <div className="z-10">
-                    <div className="text-[11px] text-gryffindor-gold font-display font-black tracking-[0.6em] uppercase italic border-l-4 border-gryffindor-red pl-6 mb-4">
-                        VAULT_SERIAL_00{Math.floor(Math.random() * 9 + 1)}
+                {/* Secret Label on Hover */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 scale-90 group-hover:scale-100">
+                    <div className="px-6 py-2 border border-gryffindor-gold/50 bg-black/60 backdrop-blur-xl text-gryffindor-gold font-display font-black uppercase text-[10px] tracking-[0.4em]">
+                        ACCESS_SOURCE
                     </div>
-                    <div className="text-xs text-white/30 uppercase font-display font-bold tracking-widest px-6">Gryffindor Certified Project</div>
                 </div>
             </div>
 
-            <div className="p-10 relative flex-grow flex flex-col">
-                <h3 className="text-2xl font-black uppercase mb-6 text-parchment-light group-hover:text-gryffindor-gold transition-colors duration-700 font-display italic leading-tight">{title}</h3>
-                <p className="text-base text-white/50 mb-10 leading-[1.7] font-serif font-light italic group-hover:text-white/80 transition-colors duration-700">{description}</p>
+            {/* Project Content */}
+            <div className="p-8 flex flex-col flex-grow relative">
+                <div className="mb-4 flex justify-between items-start">
+                    <h3 className="text-2xl font-black uppercase font-display italic text-parchment-light group-hover:text-gryffindor-gold transition-colors duration-500 leading-tight">
+                        {title}
+                    </h3>
+                    <ArrowUpRight size={20} className="text-white/20 group-hover:text-gryffindor-gold group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                </div>
 
-                <div className="flex flex-wrap gap-4 mt-auto">
+                <p className="text-parchment-light/50 font-serif italic text-base leading-relaxed mb-8 line-clamp-3 group-hover:text-parchment-light/80 transition-colors duration-500">
+                    {description}
+                </p>
+
+                <div className="mt-auto pt-6 border-t border-white/5 flex flex-wrap gap-2">
                     {tags.map((tag) => (
-                        <span key={tag} className="text-[11px] uppercase tracking-[0.3em] font-display font-black px-6 py-2.5 bg-white/5 border border-white/10 text-white/40 group-hover:bg-gryffindor-gold group-hover:text-ink transition-all cursor-default">
+                        <span key={tag} className="text-[9px] font-display font-black uppercase tracking-widest px-3 py-1 bg-white/5 border border-white/10 text-white/30 group-hover:border-gryffindor-gold/20 group-hover:text-gryffindor-gold/60 transition-colors">
                             {tag}
                         </span>
                     ))}
                 </div>
-
-                <motion.div
-                    className="absolute bottom-12 right-12 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                >
-                    <ArrowRight className="text-gryffindor-gold" size={32} />
-                </motion.div>
             </div>
-        </motion.div>
+
+            {/* Bottom Accent */}
+            <div className="h-1 w-0 bg-gryffindor-gold group-hover:w-full transition-all duration-700 ease-out" />
+        </motion.a>
     );
 };
 
 export default ProjectCard;
+

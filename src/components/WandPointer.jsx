@@ -2,15 +2,15 @@ import { motion } from "framer-motion";
 import { Wand } from "lucide-react";
 import { useEffect, useState } from "react";
 
+const sections = [
+    { id: "home", label: "Profile" },
+    { id: "about", label: "Skills" },
+    { id: "projects", label: "Projects" },
+    { id: "contact", label: "Contact" }
+];
+
 const WandPointer = () => {
     const [activeSection, setActiveSection] = useState("home");
-
-    const sections = [
-        { id: "home", label: "Profile" },
-        { id: "about", label: "Skills" },
-        { id: "projects", label: "Projects" },
-        { id: "contact", label: "Contact" }
-    ];
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -55,7 +55,7 @@ const WandPointer = () => {
                                 <div className="absolute inset-0 bg-gryffindor-gold blur-lg opacity-40" />
                             </motion.div>
                         ) : (
-                            <div className="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-white/40 transition-colors" />
+                            <div className="w-2.5 h-2.5 rounded-full border border-white/20 bg-white/5 group-hover:bg-gryffindor-gold/40 group-hover:border-gryffindor-gold/60 transition-all duration-300 shadow-[0_0_10px_rgba(251,191,36,0)] group-hover:shadow-[0_0_15px_rgba(251,191,36,0.3)]" />
                         )}
                     </div>
                 </a>
