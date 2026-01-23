@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const GoldenSnitch = () => {
     // Shared wing animation for layers
     const wingTransition = { duration: 0.1, repeat: Infinity, ease: "easeInOut" };
+
+    const [particles] = useState(() => [1, 2, 3].map(id => ({
+        id,
+        x: (Math.random() - 0.5) * 100,
+        y: (Math.random() - 0.5) * 100
+    })));
 
     return (
         <motion.div
@@ -59,15 +66,15 @@ const GoldenSnitch = () => {
                 </div>
 
                 <div className="absolute inset-0 -z-10">
-                    {[1, 2, 3].map((id) => (
+                    {particles.map(({ id, x, y }) => (
                         <motion.div
                             key={id}
                             className="absolute bg-gryffindor-gold rounded-full w-1 h-1 blur-[1px]"
                             animate={{
                                 opacity: [0, 1, 0],
                                 scale: [0, 2, 0],
-                                x: [0, (Math.random() - 0.5) * 100],
-                                y: [0, (Math.random() - 0.5) * 100],
+                                x: [0, x],
+                                y: [0, y],
                             }}
                             transition={{
                                 duration: 1.5,

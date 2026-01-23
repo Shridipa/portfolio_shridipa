@@ -26,7 +26,7 @@ const AmbientMusic = () => {
 
     return (
         <>
-            {/* Audio Element - Replace src with your music file */}
+
             <audio
                 ref={audioRef}
                 loop
@@ -34,7 +34,7 @@ const AmbientMusic = () => {
                 preload="auto"
             />
 
-            {/* Music Toggle Button */}
+
             <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -52,7 +52,7 @@ const AmbientMusic = () => {
                         <VolumeX className="text-ink" size={24} />
                     )}
 
-                    {/* Pulsing ring animation when playing */}
+
                     {isPlaying && (
                         <motion.div
                             className="absolute inset-0 rounded-full border-2 border-gryffindor-gold"
@@ -69,7 +69,7 @@ const AmbientMusic = () => {
                     )}
                 </motion.button>
 
-                {/* Tooltip */}
+
                 <AnimatePresence>
                     {showTooltip && !isPlaying && (
                         <motion.div

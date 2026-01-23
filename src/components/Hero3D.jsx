@@ -1,4 +1,4 @@
-import { useRef, useMemo } from "react";
+import { useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Float, Sphere, MeshDistortMaterial, Cone, Points, PointMaterial, Stars } from "@react-three/drei";
 import * as THREE from "three";
@@ -90,13 +90,18 @@ const GoldenSnitch = () => {
 };
 
 const MagicAtmosphere = () => {
+    const [sparks] = useState(() => [...Array(50)].map((_, i) => ({
+        key: i,
+        pos: [(Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20]
+    })));
+
     return (
         <>
             <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
 
             {/* Floating Sparkles */}
-            {[...Array(50)].map((_, i) => (
-                <Float key={i} position={[(Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20]} speed={2}>
+            {sparks.map((spark) => (
+                <Float key={spark.key} position={spark.pos} speed={2}>
                     <Sphere args={[0.015, 8, 8]}>
                         <meshStandardMaterial
                             color="#fbbf24"

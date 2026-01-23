@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Download, X } from "lucide-react";
-import { useState } from "react";
+
 
 const ResumeViewer = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
@@ -19,7 +19,7 @@ const ResumeViewer = ({ isOpen, onClose }) => {
                 className="relative max-w-4xl w-full bg-ink/95 border border-gryffindor-gold/30 rounded-sm p-8"
                 onClick={(e) => e.stopPropagation()}
             >
-                {/* Close Button */}
+
                 <button
                     onClick={onClose}
                     className="absolute top-4 right-4 text-white/60 hover:text-gryffindor-gold transition-colors"
@@ -27,7 +27,7 @@ const ResumeViewer = ({ isOpen, onClose }) => {
                     <X size={32} />
                 </button>
 
-                {/* Header */}
+
                 <div className="text-center mb-6">
                     <h3 className="text-2xl font-black uppercase text-gryffindor-gold font-display italic mb-2">
                         Resume Scroll
@@ -37,7 +37,7 @@ const ResumeViewer = ({ isOpen, onClose }) => {
                     </p>
                 </div>
 
-                {/* Resume Image */}
+
                 <div className="bg-white rounded-sm mb-6 overflow-auto max-h-[60vh]">
                     <img
                         src="/resume.png"
@@ -46,7 +46,7 @@ const ResumeViewer = ({ isOpen, onClose }) => {
                     />
                 </div>
 
-                {/* Download Button */}
+
                 <a
                     href="/resume.pdf"
                     download="Shridipa_Dhar_Resume.pdf"

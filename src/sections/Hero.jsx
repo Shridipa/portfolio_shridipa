@@ -29,7 +29,7 @@ const Hero = () => {
                         automate mystical workflows with RPA sorcery, and architect spellbinding web realms that transcend the ordinary.
                     </p>
                     <p className="text-[11px] tracking-[0.4em] uppercase text-gryffindor-gold/30 mt-6 font-display font-bold">
-                        "Forti Animo Est" — Courageous of Soul
+                        &quot;Forti Animo Est&quot; — Courageous of Soul
                     </p>
                 </motion.div>
 
