@@ -30,7 +30,7 @@ const ResumeViewer = ({ isOpen, onClose }) => {
 
                 <div className="text-center mb-6">
                     <h3 className="text-2xl font-black uppercase text-gryffindor-gold font-display italic mb-2">
-                        Resume Scroll
+                        Resume
                     </h3>
                     <p className="text-xs text-white/40 uppercase tracking-widest font-display">
                         Shridipa Dhar — Gryffindor Alchemist
