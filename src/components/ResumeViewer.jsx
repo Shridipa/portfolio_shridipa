@@ -39,10 +39,10 @@ const ResumeViewer = ({ isOpen, onClose }) => {
 
 
                 <div className="bg-white rounded-sm mb-6 overflow-auto max-h-[60vh]">
-                    <img
-                        src="/resume.png"
-                        alt="Shridipa Dhar Resume"
-                        className="w-full h-auto"
+                    <iframe
+                        src="/resume.pdf"
+                        title="Shridipa Dhar Resume"
+                        className="w-full h-[600px] border-0"
                     />
                 </div>
 

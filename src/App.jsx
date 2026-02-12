@@ -50,7 +50,7 @@ function App() {
           </h2>
 
           <div className="flex flex-col md:flex-row gap-8 w-full justify-center">
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shridipa.mail@example.com" target="_blank" rel="noopener noreferrer" className="group relative px-12 py-5 bg-gryffindor-red/90 text-parchment-light font-display font-black tracking-[0.3em] overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_80px_rgba(127,29,29,0.3)] min-w-[240px] flex items-center justify-center">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dhar.shridipa@gmail.com" target="_blank" rel="noopener noreferrer" className="group relative px-12 py-5 bg-gryffindor-red/90 text-parchment-light font-display font-black tracking-[0.3em] overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_80px_rgba(127,29,29,0.3)] min-w-[240px] flex items-center justify-center">
               <span className="relative z-10 uppercase text-sm">Send Owl Post</span>
               <motion.div
                 initial={{ scale: 0, opacity: 0 }}
