@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import hogwartsCastle from "../assets/hogwartscastle.jpg";
 
 const MagicBackground = () => {
     const [sparkles] = useState(() => [...Array(15)].map((_, i) => ({
@@ -19,7 +20,7 @@ const MagicBackground = () => {
             <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-85 transition-all duration-1000"
                 style={{ 
-                    backgroundImage: `url('/src/assets/hogwartscastle.jpg')`,
+                    backgroundImage: `url(${hogwartsCastle})`,
                     filter: "contrast(1.2) brightness(1.0) saturate(1.2) hue-rotate(-5deg)" 
                 }}
             />

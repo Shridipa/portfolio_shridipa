@@ -1,4 +1,4 @@
-
+import hogwartsPhoto from "../assets/hogwarts_photo.png";
 
 const GoldenSnitch = () => {
     return (
@@ -13,7 +13,7 @@ const GoldenSnitch = () => {
         >
             <div className="relative w-full h-full flex items-center justify-center">
                 <img 
-                    src="/src/assets/hogwarts_photo.png" 
+                    src={hogwartsPhoto} 
                     alt="Hogwarts Crest" 
                     className="w-full h-full object-contain opacity-90 drop-shadow-[0_0_50px_rgba(212,175,55,0.4)] filter brightness-110 contrast-125"
                 />

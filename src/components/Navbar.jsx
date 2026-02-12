@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Menu, X, Share2 } from "lucide-react";
 import { useState } from "react";
+import hogwartsPhoto from "../assets/hogwarts_photo.png";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +23,7 @@ const Navbar = () => {
                 >
                     {/* Hogwarts Logo in Navbar */}
                     <img 
-                        src="/src/assets/hogwarts_photo.png" 
+                        src={hogwartsPhoto} 
                         alt="Hogwarts Crest" 
                         className="w-10 h-10 object-contain brightness-150 contrast-125 drop-shadow-[0_0_10px_rgba(251,191,36,0.6)]"
                     />
