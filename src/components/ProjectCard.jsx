@@ -10,58 +10,65 @@ const ProjectCard = ({ title, description, tags, github, index }) => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="group relative flex flex-col h-full glass-parchment rounded-sm overflow-hidden transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] border-white/5 hover:border-gryffindor-gold/30"
+            transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+            className="group relative flex flex-col h-full bg-black/40 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_50px_rgba(212,175,55,0.2)] transition-all duration-500"
         >
-            <div className="relative h-56 w-full overflow-hidden bg-gradient-to-br from-gryffindor-red/20 via-neutral-900 to-black">
-                <div className="absolute inset-0 opacity-40 mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]" />
+            <div className="absolute inset-0 border border-gryffindor-gold/0 group-hover:border-gryffindor-gold/40 rounded-xl transition-colors duration-500 pointer-events-none z-20" />
+            
+            <div className="relative h-48 w-full overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-neutral-900 to-black transition-transform duration-700 group-hover:scale-110" />
                 
-                <div className="absolute top-4 left-4 flex gap-2">
-                    <div className="p-3 bg-black/40 backdrop-blur-md border border-white/10 rounded-sm">
-                        <Folder size={18} className="text-gryffindor-gold" />
+                <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
+
+                <div className="absolute top-4 left-4 z-10 flex gap-3">
+                    <div className="p-2 bg-white/5 backdrop-blur-md rounded-lg border border-white/10 group-hover:bg-gryffindor-gold/20 transition-colors">
+                        <Folder size={16} className="text-gryffindor-gold" />
                     </div>
-                    <div className="p-3 bg-black/40 backdrop-blur-md border border-white/10 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <Github size={18} className="text-gryffindor-gold" />
-                    </div>
-                </div>
-                
-                <div className="absolute top-4 right-4 flex items-center gap-2 px-3 py-1 bg-gryffindor-red/20 backdrop-blur-md border border-gryffindor-red/30 rounded-full">
-                    <Sparkles size={12} className="text-gryffindor-gold animate-pulse" />
-                    <span className="text-[10px] text-parchment-light/80 font-display font-black uppercase tracking-tighter">Certified</span>
                 </div>
 
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 scale-90 group-hover:scale-100">
-                    <div className="px-6 py-2 border border-gryffindor-gold/50 bg-black/60 backdrop-blur-xl text-gryffindor-gold font-display font-black uppercase text-[10px] tracking-[0.4em]">
-                        ACCESS_SOURCE
+                <div className="absolute top-4 right-4 z-10">
+                    <div className="px-3 py-1 bg-black/50 backdrop-blur-md border border-white/10 rounded-full flex items-center gap-2">
+                        <Sparkles size={10} className="text-gryffindor-gold animate-pulse" />
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-white/60">Public</span>
                     </div>
+                </div>
+
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-[2px]">
+                    <motion.div 
+                        initial={{ y: 10, opacity: 0 }}
+                        whileHover={{ y: 0, opacity: 1 }}
+                        className="px-5 py-2 border border-gryffindor-gold text-gryffindor-gold uppercase text-xs font-bold tracking-widest rounded bg-black/80 shadow-[0_0_20px_rgba(212,175,55,0.2)]"
+                    >
+                        View Grimoire
+                    </motion.div>
                 </div>
             </div>
 
-            <div className="p-8 flex flex-col flex-grow relative">
-                <div className="mb-4 flex justify-between items-start">
-                    <h3 className="text-2xl font-black uppercase font-display italic text-parchment-light group-hover:text-gryffindor-gold transition-colors duration-500 leading-tight">
+            <div className="p-8 flex flex-col flex-grow relative z-10 bg-gradient-to-b from-transparent to-black/40">
+                <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-2xl font-display font-bold text-parchment-light group-hover:text-gryffindor-gold transition-colors duration-300 leading-tight">
                         {title}
                     </h3>
-                    <ArrowUpRight size={20} className="text-white/20 group-hover:text-gryffindor-gold group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                    <ArrowUpRight size={18} className="text-white/20 group-hover:text-gryffindor-gold group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                 </div>
 
-                <p className="text-parchment-light/50 font-serif italic text-base leading-relaxed mb-8 line-clamp-3 group-hover:text-parchment-light/80 transition-colors duration-500">
+                <p className="text-white/50 text-sm leading-relaxed mb-6 line-clamp-3 group-hover:text-white/70 transition-colors font-serif italic">
                     {description}
                 </p>
 
-                <div className="mt-auto pt-6 border-t border-white/5 flex flex-wrap gap-2">
+                <div className="mt-auto flex flex-wrap gap-2 pt-4 border-t border-white/5">
                     {tags.map((tag) => (
-                        <span key={tag} className="text-[9px] font-display font-black uppercase tracking-widest px-3 py-1 bg-white/5 border border-white/10 text-white/30 group-hover:border-gryffindor-gold/20 group-hover:text-gryffindor-gold/60 transition-colors">
+                        <span 
+                            key={tag} 
+                            className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 bg-white/5 text-white/40 rounded border border-white/5 group-hover:border-gryffindor-gold/20 group-hover:text-gryffindor-gold/80 transition-all"
+                        >
                             {tag}
                         </span>
                     ))}
                 </div>
             </div>
-
-            <div className="h-1 w-0 bg-gryffindor-gold group-hover:w-full transition-all duration-700 ease-out" />
         </motion.a>
     );
 };
 
 export default ProjectCard;
-

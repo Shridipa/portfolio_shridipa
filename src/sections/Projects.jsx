@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Sparkles } from "lucide-react";
 import ProjectCard from "../components/ProjectCard";
 
 const projects = [
@@ -50,32 +51,60 @@ const Projects = () => {
     const pinnedProjects = projects.filter(p => p.isPinned);
 
     return (
-        <section id="projects" className="py-48 px-10 max-w-[100rem] mx-auto relative cursor-default overflow-hidden">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gryffindor-red/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gryffindor-gold/5 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+        <section id="projects" className="py-32 px-6 md:px-20 max-w-[100rem] mx-auto relative cursor-default overflow-hidden">
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gryffindor-red/5 blur-[150px] rounded-full pointer-events-none -z-10" />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gryffindor-gold/5 blur-[120px] rounded-full pointer-events-none -z-10" />
 
-            <div className="flex flex-col mb-24 relative z-10">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(185,28,28,0.03)_0%,transparent_70%)] pointer-events-none" />
+
+            <div className="flex flex-col items-center text-center mb-24 relative z-10">
                 <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="flex items-center gap-6 text-gryffindor-red font-display font-black tracking-[1em] uppercase text-xs mb-8"
+                    transition={{ duration: 1 }}
+                    className="flex items-center gap-6 mb-8 group cursor-default"
                 >
-                    <div className="w-16 h-[1px] bg-gryffindor-red/40"></div>
-                    Featured Vault
+                    <div className="h-[1px] w-16 bg-gradient-to-r from-transparent via-gryffindor-gold to-transparent opacity-50 group-hover:w-24 transition-all duration-700" />
+                    <Sparkles className="w-5 h-5 text-gryffindor-gold animate-pulse" />
+                    <span className="text-gryffindor-gold text-xs font-black tracking-[0.5em] uppercase font-display drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]">
+                        Magical Archives
+                    </span>
+                    <Sparkles className="w-5 h-5 text-gryffindor-gold animate-pulse" />
+                    <div className="h-[1px] w-16 bg-gradient-to-r from-transparent via-gryffindor-gold to-transparent opacity-50 group-hover:w-24 transition-all duration-700" />
                 </motion.div>
-                <h2 className="text-4xl md:text-6xl font-black uppercase text-parchment-light leading-[0.85] font-display italic">
-                    PINNED<br /><span className="text-gryffindor-red">REPOSITORIES</span>
+                
+                <h2 className="text-5xl md:text-7xl font-black uppercase text-parchment-light leading-[0.9] font-display italic drop-shadow-2xl relative">
+                    FEATURED<br />
+                    <span className="relative inline-block mt-2">
+                        <span className="absolute inset-0 blur-xl bg-gradient-to-r from-gryffindor-red to-orange-900 opacity-30 animate-pulse"></span>
+                        <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-[#740001] via-[#ae0001] to-[#eeba30]">
+                            SPELLBOOKS
+                        </span>
+                    </span>
                 </h2>
-                <div className="h-1 w-24 bg-gryffindor-gold mt-12 mb-8 opacity-40" />
-                <p className="text-white/30 font-serif italic text-lg max-w-xl">
-                    A curated selection of my most impactful alchemical creations and automated enchantments, directly accessible from the Great Vault.
+                
+                <p className="mt-10 text-white/50 font-serif italic text-xl max-w-2xl leading-relaxed">
+                    Unseal the ancient tomes to discover <span className="text-gryffindor-gold/80">automated enchantments</span> and <span className="text-gryffindor-gold/80">alchemical code</span> forged in the digital fires.
                 </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 relative z-10">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 relative z-10 perspective-1000">
                 {pinnedProjects.map((project, index) => (
-                    <ProjectCard key={project.title} {...project} index={index} />
+                    <motion.div
+                        key={project.title}
+                        initial={{ opacity: 0, rotateX: 10, y: 50 }}
+                        whileInView={{ opacity: 1, rotateX: 0, y: 0 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ 
+                            duration: 0.8, 
+                            delay: index * 0.15, 
+                            type: "spring", 
+                            stiffness: 50 
+                        }}
+                    >
+                        <ProjectCard {...project} index={index} />
+                    </motion.div>
                 ))}
             </div>
         </section>

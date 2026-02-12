@@ -5,6 +5,7 @@ import CanvasContainer from "./components/CanvasContainer";
 import Hero3D from "./components/Hero3D";
 import HUDOverlay from "./components/HUDOverlay";
 import Hero from "./sections/Hero";
+import MagicBackground from "./components/MagicBackground";
 import Projects from "./sections/Projects";
 import SkillsGrid from "./sections/SkillsGrid";
 import WandPointer from "./components/WandPointer";
@@ -15,7 +16,8 @@ function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   return (
-    <main className="relative bg-neutral-950 min-h-screen text-neutral-100 overflow-hidden">
+    <main className="relative min-h-screen text-neutral-100 overflow-hidden">
+      <MagicBackground />
       <Navbar />
       <HUDOverlay />
       <WandPointer />

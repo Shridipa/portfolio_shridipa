@@ -14,12 +14,18 @@ const Navbar = () => {
 
     return (
         <nav className="fixed top-0 left-0 w-full z-50 p-6">
-            <div className="max-w-[100rem] mx-auto flex justify-between items-center glass-parchment px-8 py-4 border-white/5 rounded-sm">
+            <div className="max-w-[100rem] mx-auto flex justify-between items-center px-8 py-4">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     className="flex items-center gap-4 cursor-pointer group"
                 >
+                    {/* Hogwarts Logo in Navbar */}
+                    <img 
+                        src="/src/assets/hogwarts_photo.png" 
+                        alt="Hogwarts Crest" 
+                        className="w-10 h-10 object-contain brightness-150 contrast-125 drop-shadow-[0_0_10px_rgba(251,191,36,0.6)]"
+                    />
                     <span
                         className="text-xl font-black tracking-tighter uppercase italic flex gap-2 font-display text-gryffindor-gold"
                         style={{

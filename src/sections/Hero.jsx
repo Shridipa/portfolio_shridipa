@@ -1,14 +1,10 @@
 import { motion } from "framer-motion";
-import GoldenSnitch from "../components/GoldenSnitch";
+
 
 const Hero = () => {
     return (
         <section id="home" className="relative min-h-screen flex items-center px-10 pt-20 overflow-hidden">
-            <div className="absolute inset-0 z-0 pointer-events-none">
-                <GoldenSnitch />
-            </div>
-
-            <div className="max-w-5xl z-10 relative">
+            <div className="max-w-6xl z-10 relative">
                 <div className="relative mb-8">
                     <motion.h1
                         className="text-4xl md:text-6xl font-black leading-[0.9] text-gryffindor-gold font-display italic ink-reveal relative z-10"
