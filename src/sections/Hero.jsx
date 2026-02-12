@@ -47,6 +47,20 @@ const Hero = () => {
                     <a href="#contact" className="px-12 py-5 border border-white/10 text-parchment-light font-display font-bold tracking-[0.2em] hover:bg-gryffindor-gold hover:text-ink transition-all uppercase hover:shadow-[0_0_60px_rgba(251,191,36,0.1)] bg-white/5 backdrop-blur-lg text-sm">
                         Direct Link
                     </a>
+                    <a 
+                        href="/resume.pdf" 
+                        download="Shridipa_Dhar_Resume.pdf"
+                        className="px-12 py-5 border-2 border-gryffindor-gold/50 text-gryffindor-gold font-display font-bold tracking-[0.2em] hover:bg-gryffindor-gold hover:text-black transition-all uppercase hover:shadow-[0_0_60px_rgba(251,191,36,0.3)] bg-black/30 backdrop-blur-lg text-sm group"
+                    >
+                        <span className="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:animate-bounce">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Download Scroll
+                        </span>
+                    </a>
                 </motion.div>
             </div>
         </section>
